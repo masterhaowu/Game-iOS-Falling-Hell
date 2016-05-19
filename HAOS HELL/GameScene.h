@@ -7,7 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import <QuartzCore/CAAnimation.h>
+#import <CoreMotion/CoreMotion.h>
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene <SKPhysicsContactDelegate>
+
+@property (assign, nonatomic) CMAcceleration acceleration;
+@property (strong, nonatomic) CMMotionManager  *motionManager;
+@property (strong, nonatomic) NSOperationQueue *queue;
+@property (strong, nonatomic) NSDate *lastUpdateTime;
 
 @end
